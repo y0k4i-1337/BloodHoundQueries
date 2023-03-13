@@ -17,6 +17,8 @@ The file contains the following BloodHound custom queries:
   - https://hausec.com/2019/09/09/bloodhound-cypher-cheatsheet/
   - https://hausec.com/2020/11/23/azurehound-cypher-cheatsheet/
   - https://github.com/hausec/Bloodhound-Custom-Queries
+- y0k4i BloodHound Customqueries by [@y0k4i-1337](https://github.com/y0k4i-1337)
+  - https://github.com/y0k4i-1337/BloodHound-Queries
 
 ## Usage
 
