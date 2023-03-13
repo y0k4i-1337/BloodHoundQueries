@@ -28,6 +28,13 @@ curl -s -o "$TMPDIR/customqueries-hausec.json" "https://raw.githubusercontent.co
 echo "[*] Adding category to Hausec BloodHound customqueries..."
 jq '.queries[] |= { "category": "💻 Hausec" } +. ' < "$TMPDIR/customqueries-hausec.json" > "$TMPDIR/customqueries-02-hausec-modified.json"
 
+# y0k4i BloodHound Customqueries
+echo "[*] Downloading y0k4i BloodHound customqueries..."
+curl -s -o "$TMPDIR/customqueries-y0k4i.json" "https://raw.githubusercontent.com/y0k4i-1337/BloodHound-Queries/main/customqueries.json"
+
+echo "[*] Adding category to y0k4i BloodHound customqueries..."
+jq '.queries[].category |= (sub("^";"👹 y0k4i: "))' < "$TMPDIR/customqueries-y0k4i.json" > "$TMPDIR/customqueries-02-y0k4i-modified.json"
+
 echo "[*] Merging queries..."
 cat "$TMPDIR/"*-modified.json | jq -s 'add + {queries: map(.queries[])}' > customqueries.json
 
