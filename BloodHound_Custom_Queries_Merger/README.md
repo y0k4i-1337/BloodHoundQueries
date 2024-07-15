@@ -20,11 +20,17 @@ The file contains the following BloodHound custom queries:
 - y0k4i BloodHound Customqueries by [@y0k4i-1337](https://github.com/y0k4i-1337)
   - https://github.com/y0k4i-1337/BloodHound-Queries
 
+## Prerequisites
+To user the custom query downloader, please install jq first, e.g.:   
+```bash
+sudo apt install jq
+```
+
 ## Usage
 
 Download and various queries:
 ```bash
-./bloodhound-customqueries-merger
+./bloodhound-customqueries-downloader
 ```
 
 Install the queries:
