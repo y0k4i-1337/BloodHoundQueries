@@ -37,3 +37,12 @@ In order to create the new the edges according to the naming convention, you can
 ```cypher
 MATCH (g:Group), (c:Computer) WHERE g.name =~ ("PREFIX_" + replace(c.name, ("." + c.domain), ("_SUFFIX" + "@" + c.domain))) CREATE (g)-[r:AdminTo]->(c) RETURN g.name AS Group, c.name AS Computer
 ```
+
+In order to automatically create these edges (if they already not exist), you can use the following script:
+```cypher
+MATCH (g:Group), (c:Computer)
+WHERE g.name =~ (".*" + replace(c.name, ("." + c.domain), (".*" + "@" + c.domain)))
+MERGE (g)-[:AdminTo]->(c)
+RETURN g.name AS Group, c.name AS Computer;
+```
+
